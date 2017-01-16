@@ -16,5 +16,14 @@ namespace SharedLogging
 
             File.AppendAllLines(filePath, new string[] { content });
         }
+
+
+        public void WriteToFile_New(string filePath, string content)
+        {
+            if (!File.Exists(filePath))
+                return;
+
+            File.AppendAllLines(filePath, new string[] { "#New#", content });
+        }
     }
 }
